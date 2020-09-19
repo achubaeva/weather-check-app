@@ -49,6 +49,7 @@ app.get('/', function (req, res) {
     res.render('index', {city: null, error: null, temp: null, feels: null, shift: null, units: null});
 })
 
+// replace process.env.PORT (for Heroku)with 3000 for local deployment
 app.listen(process.env.PORT, function () {
     console.log('Example app listening on port 3000!')
   })
