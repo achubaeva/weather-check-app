@@ -1,11 +1,10 @@
 require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.env'});
+
 
 const express = require('express');
 const bodyParser = require('body-parser'); // for POST request
 const app = express();
-
-const path = require('path');  
-require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 // grant access to 'public' directory
 app.use(express.static('public'));
@@ -18,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Get weather API by zipcode; return values
 const request = require('request');
-const apiKey = process.env(KEY);
+const apiKey = process.env.KEY;
 
 app.post('/', function (req, res) {
     let zip = req.body.zip;
