@@ -49,7 +49,7 @@ app.get('/', function (req, res) {
     res.render('index', {city: null, error: null, temp: null, feels: null, shift: null, units: null});
 })
 
-app.listen(3000, function () {
+app.listen(process.env.PORT, function () {
     console.log('Example app listening on port 3000!')
   })
   // cli $ killall -9 node if issue
