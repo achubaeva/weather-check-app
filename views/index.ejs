@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Get Weather by Zip Code
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    
+
+</head>
+<body>
+    <div class="card mx-auto m-5 special-card" style="width: 600px;">
+        <div class="card-body" id="mainText">
+          <ion-icon name="thermometer-outline" id="my-icon"></ion-icon>
+            <h3 id = "location">
+                <%= city %>
+            </h3>
+            <h6 id="time">
+              <% if (shift != null) { %>
+                <% var dt = new Date(); %>
+                <% dt.setUTCSeconds(dt.getUTCSeconds() + shift); %>
+                <% var utcDate = dt.toUTCString(); %> 
+                <% var t = ""; %>
+                <% if (dt.getUTCHours() < 12) { %>
+                  <% t = "AM"; %>
+                <% } else { %>
+                  <% t = "PM"; %>
+                <% } %>
+                <% if (dt.getUTCHours() > 12) { %>
+                  <% dt.setUTCHours(dt.getUTCHours() - 12); %>
+                <% } %>
+                <% utcDate = dt.toUTCString(); %>
+                <%= "as of " + utcDate.substr(0,22) + " " + t + " Local Time" %>
+               <% } %> 
+
+            </h6>
+            <h1 id="temp">
+                <% if (units === 'imperial') { %>
+                  <% var deg = '˚F'; %>
+                <% } else if (units === 'metric') { %>
+                  <% var deg = '˚C'; %>
+                  <% } %>
+                <%= temp %>
+                <%= deg %>
+            </h6>
+            <h4 id="weather">
+                <%= feels %>
+            </h4>
+            
+            <form action="/" method="post">
+
+
+
+
+                <label for="fname">Search Weather For:  </label>
+                <input type="text" id="zipcode" name="zip" placeholder="Enter 5-Digit Zip Code">
+                <input type="radio" id="fahrenheit_check" name="unit" value="imperial">
+                <label for="fahrenheit">˚F</label>
+                <input type="radio" id="celsius_check" name="unit" value="metric">
+                    <label for="celsius">˚C</label>
+                <input type="submit" class="ghost-button" value="Get Weather">
+              </form><br>
+
+            
+        </div>
+    </div>
+    <div id='test'>
+
+    </div>
+
+    <!-- Copyright -->
+<div class="navbar fixed-bottom my-footer" id="footer-txt">
+</div>
+<!-- Copyright -->
+
+
+<script type="text/javascript" src="/javascripts/main.js"></script>
+
+</body>
+</html>

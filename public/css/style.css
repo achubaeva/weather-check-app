@@ -1,0 +1,51 @@
+body {
+    background-size: cover;   
+  }
+  
+  
+  .special-card {
+    opacity: .7;
+    align-items: center;
+    text-align: center;
+  } 
+  
+  a:any-link { 
+    color: whitesmoke; 
+  }
+  
+  ion-icon {
+    font-size: 100px;
+    color: darkslategray;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .my-footer {
+    font-size: 10px; 
+    color: whitesmoke;
+  }
+  
+  #weather {
+    text-transform:capitalize;
+  }
+  
+  #myLink {
+    font-size: 11px; 
+    color: steelblue;
+  }
+  
+  .temp-text {
+    font-size: 80px;
+  }
+  
+  
+  #mainText {
+    font-size: 11px;
+  }
+  
+  label {
+    font-size: 14px;
+  }
+  
+  
