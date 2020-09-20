@@ -32,7 +32,7 @@ function changeFooter(w) {
     } else if (w== "cloudy") {
         source_link = "https://unsplash.com/photos/OCjc9bB0_A4";
         source_name = "Steven Biak Ling";
-    } else {
+    } else if (w== "default") {
         source_link = "https://unsplash.com/photos/DuBNA1QMpPA";
         source_name = "Ian Dooley";
     }
@@ -67,8 +67,10 @@ function changeIcon(w) {
         iconName = "snow-outline";
     } else if (w == "cloudy") {
         iconName = "cloudy-outline";
-    } else {
+    } else if (w== "default") { 
         iconName = "thermometer-outline";
+    } else {
+        iconName = "leaf-outline";
     }
 
 
@@ -107,11 +109,11 @@ else if (weather_condition.includes('clear') || weather_condition.includes('sky'
 else if (weather_condition.includes('storm')) {
     weather = 'storm';
 }
-else if (weather === '') {
-    weather = 'default';
+else if (weather_condition.includes('ind') || weather_condition.includes('oke')) {
+    weather = 'windy';
 }
 else {
-    weather = 'windy';
+    weather = 'default';
 }
 
 changeBackground(weather);

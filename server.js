@@ -31,7 +31,6 @@ app.post('/', function (req, res) {
         res.render('index', {data: null, error: 'Error, please try again'});
         } else {
         let data = JSON.parse(body);
-        console.log(data);
         
         if(data.main == undefined){
             res.render('index', {data: null, error: 'Error, please try again'});
@@ -50,7 +49,7 @@ app.get('/', function (req, res) {
 })
 
 // replace process.env.PORT (for Heroku)with 3000 for local deployment
-app.listen(process.env.PORT, function () {
+app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
   })
   // cli $ killall -9 node if issue
